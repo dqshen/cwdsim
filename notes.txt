@@ -1,0 +1,4 @@
+Exception.h/Exception.cpp 继承自std::exception的异常类，主要工作是把标准字符串替换为QString输出
+Error.h/Error.cpp error的两个静态重载函数用来抛出异常（Exception定义），宏命令中用到了两个系统宏__FILE__ 和 __LINE__前者应当是分别指示当前源代码文件名和行数的字符串
+OpenGL.h/OpenGL.cpp 错误日志功能与Error.h类似，另外可以获取当前GL版本以及根据缓冲区（FrameBuffer）状态打印相应字符串
+OpenCL.h/OpenCL.cpp 还上面类似的日志功能，getcode函数将CL的返回状态转化为字符串输出
