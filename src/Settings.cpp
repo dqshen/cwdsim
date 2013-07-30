@@ -83,7 +83,7 @@ Settings::Settings(QString filename)
     costWeightDiscomfort(1.0f),
     movementMode(0)
 {
-    QSettings* settings = new QSettings(filename, QSettings::IniFormat);
+    QSettings* settings = new QSettings(filename, QSettings::IniFormat);//利用QSettings生成和读写设置信息
 
     checkExist(settings, Settings::MAP_MAP_FILE);
     mapFile        = settings->value(Settings::MAP_MAP_FILE).toString();

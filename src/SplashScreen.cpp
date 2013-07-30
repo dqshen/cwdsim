@@ -16,7 +16,7 @@ SplashScreen::~SplashScreen()
 
 void SplashScreen::drawContents(QPainter* painter)
 {
-    QPixmap textPix = QSplashScreen::pixmap();
+    //QPixmap textPix = QSplashScreen::pixmap();
 
     painter->setPen(color);
     painter->drawText(this->rect, this->alignment, this->message);

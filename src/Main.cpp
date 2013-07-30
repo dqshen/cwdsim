@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 
         // Start Qt event loop
 
-        ret = application.exec();
+        ret = application.exec();        
     }
     catch (Exception& e)
     {

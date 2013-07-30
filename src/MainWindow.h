@@ -21,7 +21,7 @@ public:
             static const float WEIGHT_UPPER_BOUND;
 
             MainWindow(Logger* logger, QString applicationName, QWidget* parent = 0);
-            ~MainWindow();
+    virtual ~MainWindow();
 
     int     sliderValueToOuterLoopCount(int i);
 

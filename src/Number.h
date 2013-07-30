@@ -36,7 +36,7 @@ public:
 
     static bool isPowerOfTwo(size_t i);
 
-    static cl_ulong nanoToMilliSecondsInteger(cl_ulong time);
+    static cl_ulong nanoToMilliSecondsInteger(cl_ulong time);//和下面这个函数分别计算值的整数和小数部分。
     static cl_ulong nanoToMilliSecondsRemainder(cl_ulong time);
 };
 

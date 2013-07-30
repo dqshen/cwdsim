@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-const QString Logger::LOG_FILE                    = "crowd.log";
+const QString Logger::LOG_FILE                    = "crowd.log";//日志文件名
 
 const char*   Logger::LOG_CONSOLE_TAG_CROWD       = "[Crowd] ";
 const char*   Logger::LOG_CONSOLE_TAG_QT          = "[Qt   ] ";

@@ -136,7 +136,8 @@ LIBS += -L/usr/lib/fglrx \
     -lOpenCL \
     -lrt
 INCLUDEPATH += /usr/include
-//QMAKE_CXXFLAGS += -Werror
+QMAKE_CXXFLAGS += -Werror
+
 
 OTHER_FILES += \
     notes.txt

@@ -1256,14 +1256,14 @@ void MainWindow::initialize(const Settings*     settings,
 
 	QPixmap pixmap("textures/splash.png");
 
-	SplashScreen splash(pixmap);
+    SplashScreen splash(pixmap);//这里设置了启动画面
 	splash.show();
 
-	logger->setSplash(&splash, application);
+    logger->setSplash(&splash, application);//使用logger控制启动画面的输出
 
 	// Handle user clicking away splash
 
-    application->processEvents();
+    application->processEvents();//这个函数会让Qt先去执行其它被暂停的事件，尔后再返回执行当前这段代码。
 
     crowdScene->initialize( settings,
                             valueRendererLegend,

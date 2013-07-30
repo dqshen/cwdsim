@@ -1,4 +1,33 @@
+Application.h/Applicaton.cpp 继承自QApplication类，Qt中用来启动程序的，似乎目前在CL_ERROR或者GL_ERROR执行成功，抛出异常时或者程序执行退出时会出问题，原因不详
+
 Exception.h/Exception.cpp 继承自std::exception的异常类，主要工作是把标准字符串替换为QString输出
+
 Error.h/Error.cpp error的两个静态重载函数用来抛出异常（Exception定义），宏命令中用到了两个系统宏__FILE__ 和 __LINE__前者应当是分别指示当前源代码文件名和行数的字符串
+
+GraphicsView.h/GraphicsView.cpp 继承自QGraphicsView，注意QGraphicsView和QGraphicsScene是一对组合（另外还有Item），View用来显示Scene中的内容，相当于一个显示容器。这里可以设置地图缩放的上下限大小。
+
+Logger.h/Logger.cpp Logger是在main中创建并通过各个类的构造函数传入到各个对象中的日志文件，日志文件名定义为“crowd.log”,各个记录函数有相应的参数控制是输出到控件上还是输出到日志中。研究一下splashscreen。
+
+MainWindow.h/MainWindow.cpp 虽然是继承自QMainWindow但是除了负责了UI交互函数的填充外，主程序的初始化与刷新也包含其中，重点函数时initialize系列，初始化所有UI,读取用来涂鸦不舒适度的画笔splash，并且创建了CrowdScene对象
+
+Number.h/Number.cpp 定义了一个模板类NumberTemplate和一个数值估算类Number前者用来计算最大最小，上下限截取，计算长度，后者用来判断一些范围情况（inside or not），以二维点为主。
+
 OpenGL.h/OpenGL.cpp 错误日志功能与Error.h类似，另外可以获取当前GL版本以及根据缓冲区（FrameBuffer）状态打印相应字符串
+
 OpenCL.h/OpenCL.cpp 还上面类似的日志功能，getcode函数将CL的返回状态转化为字符串输出
+
+Random.h 产生一个随机浮点数
+
+Settings.h/Settings.cpp 利用QSettings读写程序相关的信息，其中以场景信息为主，和logger类似，也是在main中创建后，传递给各个相关类的构造函数。
+
+SplashScreen.h/SplashScreen.cpp 继承自QSplashScreen，用来设置启动画面，并且配合logger，显示启动时的信息。
+
+States.h 定义了一些枚举值，主要针对的是核心程序。
+
+String.h/String.cpp 打理从QString到GLchar的转换，格式化输出程序内存占有量和各模块输出的字符串（Profile）
+
+SystemTime.h/SystemTime.cpp 获取系统时间量，在生成Profile时使用。
+
+Vector4.h 定义了一个4元组结构体，实际使用时是以Vector4和Vector4i出现的（通过typedef），实现了一个将内容输出为格式化字符串的函数
+
+
